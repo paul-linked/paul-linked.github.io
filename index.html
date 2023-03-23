@@ -1,7 +1,62 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pastel Colors UI</title>
+    <style>
+      /* Define the pastel colors */
+      :root {
+        --pastel-pink: #ffb6c1;
+        --pastel-purple: #b19cd9;
+        --pastel-blue: #aec6cf;
+        --pastel-green: #98fb98;
+      }
+
+      /* Set the background color */
+      body {
+        background-color: var(--pastel-blue);
+      }
+
+      /* Style the heading */
+      h1 {
+        font-size: 3em;
+        color: var(--pastel-pink);
+        text-align: center;
+        margin-top: 1em;
+      }
+
+      /* Style the container */
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 1em;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Style the buttons */
+      button {
+        background-color: var(--pastel-purple);
+        color: white;
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2em;
+        margin-top: 1em;
+      }
+
+      button:hover {
+        background-color: var(--pastel-green);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pastel Colors UI</h1>
+    <div class="container">
+      <p>This is a basic UI template using pastel colors.</p>
+      <button>Click me</button>
+    </div>
 </body>
 </html>
