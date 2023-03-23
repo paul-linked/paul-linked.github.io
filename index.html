@@ -2,61 +2,178 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Pastel Colors UI</title>
+    <title>Examined</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Slab&display=swap" rel="stylesheet">
     <style>
-      /* Define the pastel colors */
+      /* Define the colors */
       :root {
-        --dark-blue: #0d0c1d;
-        --pastel-purple: #b19cd9;
-        --pastel-orange: #f1dac4;
-        --pastel-dark-purple: #474973;
+        --background-color: #f6f4e6;
+        --heading-color: #3c3c3c;
+        --text-color: #6b6b6b;
+        --button-background-color: #343434;
+        --button-text-color: #f6f4e6;
+        --button-hover-color: #9c6b57;
+        --accent-color: #9c6b57;
       }
 
       /* Set the background color */
       body {
-        background-color: var(--pastel-blue);
+        background-color: var(--background-color);
+        font-family: 'Roboto Slab', serif;
       }
 
-      /* Style the heading */
-      h1 {
-        font-size: 3em;
-        color: var(--pastel-pink);
-        text-align: center;
-        margin-top: 1em;
+      /* Style the banner */
+      .banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 5em;
+        background-color: var(--background-color);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      
+      /* Style the site title */
+      .site-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 2em;
+        color: var(--heading-color);
+        text-shadow: 2px 2px #e6e6e6;
+        margin-left: 1em;
+      }
+      
+      /* Style the navigation buttons */
+      .nav-btn {
+        background-color: var(--button-background-color);
+        color: var(--button-text-color);
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        margin: 0 1em;
+        padding: 0.5em 1em;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
       }
 
+      .nav-btn:hover {
+        background-color: var(--button-hover-color);
+      }
+     
       /* Style the container */
       .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 1em;
-        background-color: white;
-        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+        font-size: 1.2em;
+        margin: 7em auto 0;
+        padding: 2em;
+        background-color: #f1dac4;
+        border-radius: 15px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       }
 
-      /* Style the buttons */
-      button {
-        background-color: var(--pastel-purple);
-        color: white;
-        border: none;
-        padding: 0.5em 1em;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1.2em;
-        margin-top: 1em;
+      /* Style the text */
+      p {
+        color: var(--text-color);
+        line-height: 1.6;
+        text-align: justify;
       }
 
-      button:hover {
-        background-color: var(--pastel-green);
+      /* Add a steampunk-style image to the container */
+      .container:before {
+        content: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/a2004850259417.58cb8e03a6231.jpg');
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: -50px;
+        left: 50%;
+        margin-left: -50px;
+        opacity: 0.2;
       }
+
+      /* Style the image container */
+      .image-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 2em auto;
+        padding: 1em;
+      }
+
+      /* Style the images */
+      .image {
+        width: 30%;
+        margin: 1%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+            /* Style the GIF container */
+            .gif-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 2em auto;
+        padding: 1em;
+      }
+
+      /* Style the GIFs */
+      .gif {
+        width: 30%;
+        margin: 1%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+
+
     </style>
   </head>
   <body>
-    <h1>Pastel Colors UI</h1>
-    <div class="container">
-      <p>This is a basic UI template using pastel colors.</p>
-      <button>Click me</button>
+    <div class="banner">
+      <h1 class="site-title">antidisestablishmentarianismconstitutionalismphilosophyexamined</h1>
+      <div class="nav-buttons">
+        <button class="nav-btn">Home</button>
+        <button class="nav-btn">Articles</button>
+        <button class="nav-btn">About</button>
+        <button class="nav-btn">Contact</button>
+      </div>
     </div>
-</body>
+    <div class="container">
+      <h2>The Intricacies of Antidisestablishmentarianism</h2>
+      <p>
+        Legend has it that a brilliant but slightly eccentric scientist named Paul had invented a machine so complex and ingenious that it could end antidisestablishmentarianism and constitutionalism once and for all. Paul's assistant, a young and eager researcher named Pope, was his right-hand man in the project, tirelessly working to help Paul realize his vision. <br><br>
+
+        It was said that the machine was so powerful that it could literally erase these concepts from the minds of those who held them, leaving only a blank slate in their place. Unfortunately, as often happens with great ideas, the plans for the machine were lost over time. Paul passed away, and Pope was left with only memories of their collaboration. <br><br>
+        
+        Years later, Pope stumbled upon some old notes and sketches from Paul's laboratory. These notes were published and an effort was reborn.
+
+        Pope's vision was to crowdsource ideas and rebuild the blueprints for Paul's machine, hoping to complete what they had started all those years ago. However, the plans were so complicated and fragmented that progress was slow, and some began to wonder if the machine could ever be rebuilt. We still belive that this machine can be realized and our efforts will be rewarded. <br><br>
+        As more and more people became interested in the project, the website where the blueprints were hosted became flooded with activity. People from all walks of life came together to collaborate on the rebuilding of Paul's machine, with some even forming cult-like groups dedicated to the cause.
+
+        As the project progressed, some began to notice strange side effects. Those who worked on the blueprints for too long began to forget about their personal lives, their families, and their identities. They became consumed with the project, willing to do anything to complete it.<br><br>
+
+        It wasn't until they were too far gone that they realized the true purpose of the machine. Paul had not intended to end antidisestablishmentarianism and constitutionalism; he had wanted to erase all forms of critical thinking from the minds of people, leaving them completely docile and obedient to authority.<br><br>
+
+        Pope was horrified at what he had unknowingly been working towards. He tried to shut down the project, but it was too late. The blueprints had spread far and wide, and people were already building the machine.
+
+        The completed machine was a monstrosity, a massive hulking structure of gears and wires that hummed with an otherworldly energy. When activated, it emitted a bright blue light that enveloped the minds of those within its radius.
+
+        In the end, the machine did exactly what Paul had intended. People's minds were wiped clean, leaving them completely obedient to authority. The world was plunged into a dark age of totalitarianism, with the machine's followers ruling over the masses with an iron fist.
+
+        And so, the legend of Paul's machine became a cautionary tale, a warning about the dangers of blindly following a cause without questioning its true intentions. 
+      </p>
+    </div>
+        <!-- Additional container for images -->
+        <div class="image-container">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a65ca550259417.58cb8e03588af.gif" alt="Image 1 description" class="gif">
+          
+        </div>
+    
+  </body>
 </html>
