@@ -1,0 +1,175 @@
+
+/* Define the colors */
+:root {
+  /*old colors */
+    --background-color: #f6f4e6;
+    --heading-color: #3c3c3c;
+    --text-color: #6b6b6b;
+    --button-background-color: #343434;
+    --button-text-color: #f6f4e6;
+    --button-hover-color: #9c6b57;
+    --accent-color: #9c6b57;
+    --light-blue-color: #add8e6;
+    --mustard-color: #ebc700;
+
+    /*new colors */
+    --cod-gray: #080707;
+    --rob-roy: #eac462;
+    --submarine: #b7c5c7;
+    --buttered-rum: #ac770f;
+    --korma: #83580f;
+    --gumbo: #7d9aa6;
+    --shadow: #8c7e50;
+    --bermuda-gray: #688ba2;
+    --zombie: #e9d3a3;
+  }
+
+  /* Set the background color */
+  body {
+    background-color: var(--background-color);
+    font-family: 'Roboto Slab', serif;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5em;
+    background-color: var(--background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: url('https://raw.githubusercontent.com/paul-linked/paul-linked.github.io/main/Images/Examined_logo.jpg');
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position: left;
+  }
+  
+  /* Style the site title */
+  .site-title {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: var(--cod-gray);    
+  }
+  
+  .site-title:before {
+    content: "";
+    position: absolute;
+    top: -0.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(100% + 1em);
+    width: calc(60% + 1em);
+    background-color: var(--rob-roy);
+    border-radius: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    filter: blur(0.4em);
+    z-index: -1;
+    opacity: 0.95;
+  }
+  .site-title h1 {
+    margin: 0;
+    padding: 0.5em 1em;
+    position: relative;
+    z-index: 3;
+  }
+  
+  
+  .nav-btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+
+  }
+
+  /* Style the navigation buttons */
+  .nav-btn {
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.6;
+    filter: blur(1px);
+  }
+
+  .nav-btn:hover {
+    background-color: var(--button-hover-color);
+  }
+ 
+  /* Style the container */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    font-size: 1.2em;
+    margin: 7em auto 0;
+    padding: 2em;
+    background-color: #f1dac4;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Style the text */
+  p {
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  /* Add a steampunk-style image to the container */
+  .container:before {
+    content: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/a2004850259417.58cb8e03a6231.jpg');
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0.2;
+  }
+
+  /* Style the text-with-image container */
+  .text-with-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
+  }
+
+  /* Style the text content */
+  .text-content {
+    width: calc(70% - 1em);
+    margin-right: 1em;
+  }
+
+  /* Style the content images */
+  .content-image {
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+
+  @media (max-width: 768px) {
+    .text-content,
+    .content-image {
+      width: 100%;
+    }
+
+    .text-content {
+      margin-right: 0;
+      margin-bottom: 1em;
+    }
+  }
