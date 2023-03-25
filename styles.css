@@ -24,11 +24,19 @@
     --zombie: #e9d3a3;
   }
 
+  /* Import the desired font from cdnfonts.com */
+  @import url('https://fonts.cdnfonts.com/css/old-newspaper');
+  @import url('https://fonts.cdnfonts.com/css/stamp-act');
+
   /* Set the background color */
   body {
-    background-color: var(--background-color);
-    font-family: 'Roboto Slab', serif;
+    background-image: url('https://raw.githubusercontent.com/paul-linked/paul-linked.github.io/main/Images/DALL%C2%B7E%202023-03-25%2022.00.08%20-%20intricate%20blueprints%20of%20a%20mechanical%20machine%20on%20very%20faint%20old%20paper.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgba(0,0,0,0.4);
   }
+  
 
   .banner {
     display: flex;
@@ -41,7 +49,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 3;
     background-image: url('https://raw.githubusercontent.com/paul-linked/paul-linked.github.io/main/Images/Examined_logo.jpg');
     background-size: contain;
     background-repeat: repeat-x;
@@ -53,7 +61,9 @@
     flex: 1;
     text-align: center;
     position: relative;
-    z-index: 2;
+    z-index: 4;
+    font-family: 'Old newspaper font', sans-serif;
+    font-size: 2.3em;
     color: var(--cod-gray);    
   }
   
@@ -64,7 +74,7 @@
     left: 50%;
     transform: translateX(-50%);
     height: calc(100% + 1em);
-    width: calc(60% + 1em);
+    width: calc(45% + 1em);
     background-color: var(--rob-roy);
     border-radius: 1em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -76,7 +86,7 @@
     margin: 0;
     padding: 0.5em 1em;
     position: relative;
-    z-index: 3;
+    z-index: 5;
   }
   
   
@@ -86,25 +96,28 @@
     align-items: center;
     justify-content: end;
     gap: 1rem;
+    
 
   }
 
   /* Style the navigation buttons */
   .nav-btn {
-    background-color: var(--button-background-color);
-    color: var(--button-text-color);
+    background-color: var(--rob-roy);
+    color: var(--cod-gray);
     border: none;
     border-radius: 5px;
     padding: 0.5em 1em;
+    margin-right: 1em;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    opacity: 0.6;
-    filter: blur(1px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    opacity: 0.85;
+    
   }
 
   .nav-btn:hover {
-    background-color: var(--button-hover-color);
+    background-color: var(--shadow);
+    color: var(--submarine);
   }
  
   /* Style the container */
@@ -116,17 +129,34 @@
     font-size: 1.2em;
     margin: 7em auto 0;
     padding: 2em;
-    background-color: #f1dac4;
+    background-color: var(--bermuda-gray);
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 
+  
+  
+
   /* Style the text */
   p {
-    color: var(--text-color);
-    line-height: 1.6;
+    font-family: 'Old newspaper font', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.3;
     text-align: justify;
+    text-indent: 1em;
+    margin: 1em 0;
+    z-index: 1;
   }
+  
+  br {
+    content: " ";
+    display: block;
+    margin: 0.7em 0;
+  }
+
+
+
 
   /* Add a steampunk-style image to the container */
   .container:before {
@@ -155,12 +185,33 @@
     margin-right: 1em;
   }
 
-  /* Style the content images */
+  .text-content h2 {
+    font-family: 'Stamp Act Jumbled', sans-serif;
+    font-size: 2em;
+    font-weight: 900;
+    margin: 0;
+    margin-bottom: 0.5em;
+
+  }
+
   .content-image {
-    width: 30%;
+    position: relative;
+    z-index: 1;
+    width: 29.5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+    filter: sepia(20%);
   }
+  
+  .content-image:hover {
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
+    transform: scale(1.03) rotate(0.3deg);
+    filter: sepia(100%);
+
+    z-index: 2;
+  }
+  
 
   @media (max-width: 768px) {
     .text-content,
