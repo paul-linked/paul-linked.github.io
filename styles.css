@@ -51,6 +51,7 @@
     left: 0;
     z-index: 3;
     background-image: url('https://raw.githubusercontent.com/paul-linked/paul-linked.github.io/main/Images/Examined_logo.jpg');
+    filter: grayscale(10%) contrast(100%) brightness(80%) sepia(10%) blur(0.5px);
     background-size: contain;
     background-repeat: repeat-x;
     background-position: left;
@@ -111,13 +112,18 @@
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-    opacity: 0.85;
+    opacity: 0.95;
     
   }
 
   .nav-btn:hover {
     background-color: var(--shadow);
     color: var(--submarine);
+  }
+
+  .nav-btn a {
+    text-decoration: none;
+    color: var(--cod-gray);
   }
  
   /* Style the container */
@@ -198,6 +204,7 @@
     position: relative;
     z-index: 1;
     width: 29.5%;
+    top: 250px; /* add this line to move the image down */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     transition: box-shadow 0.3s ease-in-out;
@@ -224,3 +231,44 @@
       margin-bottom: 1em;
     }
   }
+
+
+  #posts {
+    border: 5px var(--shadow);
+    padding: 10px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  .post {
+    margin-bottom: 10px;
+    border: 2px solid var(--submarine);
+    background-color: var(--gumbo);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    display: block; /* Add this line */
+    padding: 10px;
+  }
+  
+  .post h2 {
+    margin-top: 0;
+  }
+  .post h3 {
+    font-family: 'Old newspaper font', sans-serif;
+    font-size: 1.25em;
+    font-weight: 900;
+    margin: 0;
+    margin-bottom: 0.5em;
+  }
+  
+  .post p {
+    margin-bottom: 0;
+  }
+  
+  form {
+    margin-top: 20px;
+    z-index: 7;
+    display: block;
+    max-width: 400px;
+
+  }
+  
