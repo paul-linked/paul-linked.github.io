@@ -9,6 +9,10 @@
     <link href="https://fonts.cdnfonts.com/css/old-newspaper" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/stamp-act" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Airtable -->
+    <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+    <script src="node_modules/airtable/build/airtable.browser.js"></script>
 </head>
 
 <body>
@@ -24,20 +28,24 @@
 
     <div class="container">
         <div class="text-content">
-          <h2>Forum</h2>
-          <br>
-          <div id="posts"></div>
-          <form>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <h2>Forum</h2>
             <br>
-            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-            <br>
-            <button type="submit">Add Post</button>
-          </form>
-        </div>
-      </div>
-      <script src="forum.js"></script>
+            <div id="posts"></div>
+            <button id="add-comment-btn">Add Comment</button>
+            <form id="comment-form" class="form-container hidden">
+                <label for="name-input">Name:</label>
+                <input type="text" id="name-input" required>
 
+                <label for="comment-input">Comment:</label>
+                <textarea id="comment-input" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <ul id="comment-list"></ul>
+        </div>
+    </div>
+    <script src="forum.js"></script>
 </body>
+
 
 </html>

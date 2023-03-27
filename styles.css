@@ -1,274 +1,358 @@
-
 /* Define the colors */
 :root {
-  /*old colors */
-    --background-color: #f6f4e6;
-    --heading-color: #3c3c3c;
-    --text-color: #6b6b6b;
-    --button-background-color: #343434;
-    --button-text-color: #f6f4e6;
-    --button-hover-color: #9c6b57;
-    --accent-color: #9c6b57;
-    --light-blue-color: #add8e6;
-    --mustard-color: #ebc700;
+  /*new colors */
+  --cod-gray: #080707;
+  --rob-roy: #eac462;
+  --submarine: #b7c5c7;
+  --buttered-rum: #ac770f;
+  --korma: #83580f;
+  --gumbo: #7d9aa6;
+  --shadow: #8c7e50;
+  --bermuda-gray: #688ba2;
+  --zombie: #e9d3a3;
+}
 
-    /*new colors */
-    --cod-gray: #080707;
-    --rob-roy: #eac462;
-    --submarine: #b7c5c7;
-    --buttered-rum: #ac770f;
-    --korma: #83580f;
-    --gumbo: #7d9aa6;
-    --shadow: #8c7e50;
-    --bermuda-gray: #688ba2;
-    --zombie: #e9d3a3;
-  }
+/* Import the desired font from cdnfonts.com */
+@import url('https://fonts.cdnfonts.com/css/old-newspaper');
+@import url('https://fonts.cdnfonts.com/css/stamp-act');
 
-  /* Import the desired font from cdnfonts.com */
-  @import url('https://fonts.cdnfonts.com/css/old-newspaper');
-  @import url('https://fonts.cdnfonts.com/css/stamp-act');
+/* Set the background color */
+body {
+  background-image: url('https://raw.githubusercontent.com/paul-linked/paul-linked.github.io/main/Images/DALL%C2%B7E%202023-03-25%2022.00.08%20-%20intricate%20blueprints%20of%20a%20mechanical%20machine%20on%20very%20faint%20old%20paper.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: rgba(0, 0, 0, 0.4);
+}
 
-  /* Set the background color */
-  body {
-    background-image: url('https://raw.githubusercontent.com/paul-linked/paul-linked.github.io/main/Images/DALL%C2%B7E%202023-03-25%2022.00.08%20-%20intricate%20blueprints%20of%20a%20mechanical%20machine%20on%20very%20faint%20old%20paper.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: rgba(0,0,0,0.4);
-  }
-  
 
-  .banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 5em;
-    background-color: var(--background-color);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    background-image: url('https://raw.githubusercontent.com/paul-linked/paul-linked.github.io/main/Images/Examined_logo.jpg');
-    filter: grayscale(10%) contrast(100%) brightness(80%) sepia(10%) blur(0.5px);
-    background-size: contain;
-    background-repeat: repeat-x;
-    background-position: left;
-  }
-  
-  /* Style the site title */
-  .site-title {
-    flex: 1;
-    text-align: center;
-    position: relative;
-    z-index: 4;
-    font-family: 'Old newspaper font', sans-serif;
-    font-size: 2.3em;
-    color: var(--cod-gray);    
-  }
-  
-  .site-title:before {
-    content: "";
-    position: absolute;
-    top: -0.5em;
-    left: 50%;
-    transform: translateX(-50%);
-    height: calc(100% + 1em);
-    width: calc(45% + 1em);
-    background-color: var(--rob-roy);
-    border-radius: 1em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    filter: blur(0.4em);
-    z-index: -1;
-    opacity: 0.95;
-  }
-  .site-title h1 {
-    margin: 0;
-    padding: 0.5em 1em;
-    position: relative;
-    z-index: 5;
-  }
-  
-  
-  .nav-btn-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
-    gap: 1rem;
-    
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 5em;
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background-image: url('https://raw.githubusercontent.com/paul-linked/paul-linked.github.io/main/Images/Examined_logo.jpg');
+  filter: grayscale(10%) contrast(100%) brightness(80%) sepia(10%) blur(0.5px);
+  background-size: contain;
+  background-repeat: repeat-x;
+  background-position: left;
+}
 
-  }
+/* Style the site title */
+.site-title {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 4;
+  font-family: 'Old newspaper font', sans-serif;
+  font-size: 2.3em;
+  color: var(--cod-gray);
+}
 
-  /* Style the navigation buttons */
-  .nav-btn {
-    background-color: var(--rob-roy);
-    color: var(--cod-gray);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5em 1em;
-    margin-right: 1em;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-    opacity: 0.95;
-    
-  }
+.site-title:before {
+  content: "";
+  position: absolute;
+  top: -0.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  height: calc(100% + 1em);
+  width: calc(45% + 1em);
+  background-color: var(--rob-roy);
+  border-radius: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  filter: blur(0.4em);
+  z-index: -1;
+  opacity: 0.95;
+}
 
-  .nav-btn:hover {
-    background-color: var(--shadow);
-    color: var(--submarine);
-  }
+.site-title h1 {
+  margin: 0;
+  padding: 0.5em 1em;
+  position: relative;
+  z-index: 5;
+}
 
-  .nav-btn a {
-    text-decoration: none;
-    color: var(--cod-gray);
-  }
- 
-  /* Style the container */
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 80%;
-    font-size: 1.2em;
-    margin: 7em auto 0;
-    padding: 2em;
-    background-color: var(--bermuda-gray);
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
 
-  
-  
+.nav-btn-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
 
-  /* Style the text */
-  p {
-    font-family: 'Old newspaper font', sans-serif;
-    font-size: 1em;
-    font-weight: 500;
-    line-height: 1.3;
-    text-align: justify;
-    text-indent: 1em;
-    margin: 1em 0;
-    z-index: 1;
-  }
-  
-  br {
-    content: " ";
-    display: block;
-    margin: 0.7em 0;
-  }
+
+}
+
+/* Style the navigation buttons */
+.nav-btn {
+  background-color: var(--rob-roy);
+  color: var(--cod-gray);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  margin-right: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  opacity: 0.95;
+
+}
+
+.nav-btn:hover {
+  background-color: var(--shadow);
+  color: var(--submarine);
+}
+
+.nav-btn a {
+  text-decoration: none;
+  color: var(--cod-gray);
+}
+
+/* Style the container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  font-size: 1.2em;
+  margin: 7em auto 0;
+  padding: 2em;
+  background-color: var(--bermuda-gray);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 
 
 
-  /* Add a steampunk-style image to the container */
-  .container:before {
-    content: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/a2004850259417.58cb8e03a6231.jpg');
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: -50px;
-    left: 50%;
-    margin-left: -50px;
-    opacity: 0.2;
-  }
+/* Style the text */
+p {
+  font-family: 'Old newspaper font', sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: justify;
+  text-indent: 1em;
+  margin: 1em 0;
+  z-index: 1;
+}
 
-  /* Style the text-with-image container */
-  .text-with-image {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 2em;
-    flex-wrap: wrap;
-  }
+br {
+  content: " ";
+  display: block;
+  margin: 0.7em 0;
+}
 
-  /* Style the text content */
-  .text-content {
-    width: calc(70% - 1em);
-    margin-right: 1em;
-  }
 
-  .text-content h2 {
-    font-family: 'Stamp Act Jumbled', sans-serif;
-    font-size: 2em;
-    font-weight: 900;
-    margin: 0;
-    margin-bottom: 0.5em;
 
-  }
 
+/* Add a steampunk-style image to the container */
+.container:before {
+  content: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/a2004850259417.58cb8e03a6231.jpg');
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: -50px;
+  left: 50%;
+  margin-left: -50px;
+  opacity: 0.2;
+}
+
+/* Style the text-with-image container */
+.text-with-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2em;
+  flex-wrap: wrap;
+}
+
+/* Style the text content */
+.text-content {
+  width: calc(70% - 1em);
+  margin-right: 1em;
+}
+
+.text-content h2 {
+  font-family: 'Stamp Act Jumbled', sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+  margin: 0;
+  margin-bottom: 0.5em;
+
+}
+
+.content-image {
+  position: relative;
+  z-index: 1;
+  width: 29.5%;
+  top: 250px;
+  /* add this line to move the image down */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease-in-out;
+  filter: sepia(20%);
+}
+
+.content-image:hover {
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
+  transform: scale(1.03) rotate(0.3deg);
+  filter: sepia(100%);
+
+  z-index: 2;
+}
+
+
+@media (max-width: 768px) {
+
+  .text-content,
   .content-image {
-    position: relative;
-    z-index: 1;
-    width: 29.5%;
-    top: 250px; /* add this line to move the image down */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    transition: box-shadow 0.3s ease-in-out;
-    filter: sepia(20%);
-  }
-  
-  .content-image:hover {
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
-    transform: scale(1.03) rotate(0.3deg);
-    filter: sepia(100%);
-
-    z-index: 2;
-  }
-  
-
-  @media (max-width: 768px) {
-    .text-content,
-    .content-image {
-      width: 100%;
-    }
-
-    .text-content {
-      margin-right: 0;
-      margin-bottom: 1em;
-    }
+    width: 100%;
   }
 
+  .text-content {
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+}
 
-  #posts {
-    border: 5px var(--shadow);
-    padding: 10px;
-    margin-bottom: 20px;
-    display: block;
-  }
-  
-  .post {
-    margin-bottom: 10px;
-    border: 2px solid var(--submarine);
-    background-color: var(--gumbo);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-    display: block; /* Add this line */
-    padding: 10px;
-  }
-  
-  .post h2 {
-    margin-top: 0;
-  }
-  .post h3 {
-    font-family: 'Old newspaper font', sans-serif;
-    font-size: 1.25em;
-    font-weight: 900;
-    margin: 0;
-    margin-bottom: 0.5em;
-  }
-  
-  .post p {
-    margin-bottom: 0;
-  }
-  
-  form {
-    margin-top: 20px;
-    z-index: 7;
-    display: block;
-    max-width: 400px;
 
-  }
-  
+#posts {
+  border: 5px var(--shadow);
+  padding: 10px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.post {
+  margin-bottom: 10px;
+  border: 2px solid var(--submarine);
+  background-color: var(--gumbo);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  display: block;
+  /* Add this line */
+  padding: 10px;
+}
+
+.post h2 {
+  margin-top: 0;
+}
+
+.post h3 {
+  font-family: 'Old newspaper font', sans-serif;
+  font-size: 1.25em;
+  font-weight: 900;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.post p {
+  margin-bottom: 0;
+}
+
+#add-comment-btn {
+  background-color: var(--gumbo);
+  color: var(--cod-gray);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#add-comment-btn:hover {
+  background-color: var(--shadow);
+}
+
+/* Style the form container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* Style the form labels */
+label {
+  font-family: 'Stamp Act Jumbled', sans-serif;
+  color: var(--cod-gray);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* Style the form input fields */
+input[type="text"],
+textarea {
+  background-color: var(--submarine);
+  color: var(--cod-gray);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Style the form submit button */
+button[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--gumbo);
+  color: var(--cod-gray);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--shadow);
+}
+
+button[type="submit"]:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none;
+}
+
+.comment {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid var(--gumbo);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment h3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: 'Stamp Act Jumbled', sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 0.5em;
+}
+
+.comment p {
+  font-family: 'Old newspaper font', sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: justify;
+  text-indent: 1em;
+  margin: 1em 0;
+  z-index: 1;
+}

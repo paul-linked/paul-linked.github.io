@@ -1,65 +1,99 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+$('#add-comment-btn').on('click', function () {
+  $('#comment-form').toggleClass('hidden');
+});
 
-// Your Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBf6WZ7pucO-j1MeFTgD57_UOE9bBR128g",
-  authDomain: "website-bfbf4.firebaseapp.com",
-  databaseURL: "https://website-bfbf4-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "website-bfbf4",
-  storageBucket: "website-bfbf4.appspot.com",
-  messagingSenderId: "935456433264",
-  appId: "1:935456433264:web:bb36e13ebe2479bcb700b5",
-  measurementId: "G-FTJZ1P942Y"
+var Airtable = require('airtable');
+var base = new Airtable({ apiKey: 'keygj5yTo81mZuc1Z' }).base('appVDiUQURtQ4oD82');
+
+var loadProjects = function () {
+  $('#project-list').empty();
+
+  base('Projects').select({
+    sort: [
+      { field: 'Date', direction: 'desc' }
+    ]
+  }).eachPage(function page(records, fetchNextPage) {
+    records.forEach(function (record) {
+      var $project = $('<li>');
+      $project.append($('<strong>').text(record.get('Name') + ': '));
+      $project.append($('<span>').text(record.get('Comment') + ' (' + record.get('Date') + ')'));
+
+      $('#project-list').append($project);
+    });
+
+    fetchNextPage();
+  }, function done(error) {
+    console.log(error);
+  });
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+var loadComments = function () {
+  $('#comment-list').empty();
 
-// Get a reference to the "posts" node in the Firebase Realtime Database
-const postsRef = database.ref('posts');
+  base('Projects').select({
+    sort: [
+      { field: 'Date', direction: 'asc' }
+    ]
+  }).eachPage(function page(records, fetchNextPage) {
+    records.forEach(function (record) {
+      var $comment = $('<div>').addClass('comment');
+      $comment.append($('<h3>').text(record.get('Name')));
+      $comment.append($('<p>').text(record.get('Comment')));
 
-// Listen for changes to the "posts" node in the Firebase Realtime Database
-postsRef.on('value', function (snapshot) {
-  const postsDiv = document.getElementById("posts");
-  postsDiv.innerHTML = "";
+      $('#comment-list').prepend($comment);
+    });
 
-  snapshot.forEach(function (childSnapshot) {
-    const post = childSnapshot.val();
-    const postDiv = document.createElement("div");
-    postDiv.classList.add("post");
-
-    const nameHeader = document.createElement("h3");
-    nameHeader.innerText = post.name;
-
-    const messageParagraph = document.createElement("p");
-    messageParagraph.innerText = post.message;
-
-    postDiv.appendChild(nameHeader);
-    postDiv.appendChild(messageParagraph);
-
-    postsDiv.appendChild(postDiv);
+    fetchNextPage();
+  }, function done(error) {
+    console.log(error);
   });
-});
+};
 
-// Handle form submission to add a new post
-const form = document.querySelector('form');
-form.addEventListener('submit', function (event) {
+$('#comment-form').submit(function (event) {
   event.preventDefault();
 
-  const nameInput = document.getElementById("name");
-  const messageInput = document.getElementById("message");
-
-  const name = nameInput.value;
-  const message = messageInput.value;
-
-  // Write the post data to the Firebase Realtime Database
-  postsRef.push({
-    name: name,
-    message: message
+  var name = $('#name-input').val();
+  var comment = $('#comment-input').val();
+  var friendlyDate = new Date().toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
   });
 
-  nameInput.value = "";
-  messageInput.value = "";
+  $('#submit-button').attr('disabled', true);
+  $('#submit-button').text('Submitting...');
+
+  // Check if a record with the same Name and Comment fields already exists
+  const escapedComment = comment.replace(/'/g, "\\'");
+  base('Projects').select({
+    filterByFormula: `AND(Name = '${name}', Comment = '${escapedComment}')`
+  }).firstPage(function (err, records) {
+    if (err) { console.log(err); return; }
+
+    if (records.length > 0) {
+      // A record with the same Name and Comment fields already exists
+      $('#submit-button').removeAttr('disabled');
+      $('#submit-button').text('Submit');
+      return;
+    }
+
+    // No record with the same Name and Comment fields exists, so create a new one
+    base('Projects').create({
+      "Name": name,
+      "Comment": comment,
+      "Date": friendlyDate
+    }, function (err, record) {
+      if (err) { console.log(err); return; }
+      loadProjects();
+      $('#project-form').trigger('reset');
+      $('#submit-button').removeAttr('disabled');
+      $('#submit-button').text('Submit');
+      // Load the comments again to display the newly added comment
+      loadComments();
+    });
+  });
 });
+
+
+loadProjects();
+loadComments();
