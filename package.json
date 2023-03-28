@@ -1,5 +1,16 @@
 {
   "dependencies": {
     "airtable": "^0.11.6"
-  }
+  },
+  "name": "paul-linked.github.io",
+  "version": "1.0.0",
+  "main": "forum.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
