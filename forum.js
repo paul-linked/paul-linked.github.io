@@ -2,8 +2,10 @@ $('#add-comment-btn').on('click', function () {
   $('#comment-form').toggleClass('hidden');
 });
 
+var Key = config.Airtable_key;
+
 var Airtable = require('airtable');
-var base = new Airtable({ apiKey: 'keygj5yTo81mZuc1Z' }).base('appVDiUQURtQ4oD82');
+var base = new Airtable({ apiKey: key }).base('appVDiUQURtQ4oD82');
 
 var loadProjects = function () {
   $('#project-list').empty();
