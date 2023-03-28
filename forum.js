@@ -5,7 +5,7 @@ $('#add-comment-btn').on('click', function () {
 
 
 var Airtable = require('airtable');
-var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appVDiUQURtQ4oD82');
+var base = new Airtable( "keygj5yTo81mZuc1Z").base('appVDiUQURtQ4oD82');
 
 var loadProjects = function () {
   $('#project-list').empty();
