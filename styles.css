@@ -356,3 +356,22 @@ button[type="submit"]:disabled {
   margin: 1em 0;
   z-index: 1;
 }
+
+.print {
+  margin-bottom: 20px;
+  filter: sepia(20%);
+}
+
+.print img {
+  max-width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.print img:hover {
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
+  transform: scale(1.03) rotate(0.3deg);
+  filter: sepia(100%);
+
+  z-index: 2;
+}

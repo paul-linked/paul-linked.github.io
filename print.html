@@ -9,6 +9,10 @@
     <link href="https://fonts.cdnfonts.com/css/old-newspaper" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/stamp-act" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Airtable -->
+    <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+    <script src="node_modules\airtable\build\airtable.browser.js"></script>
 </head>
 
 <body>
@@ -22,7 +26,14 @@
     </div>
     <div class="container">
         <H2>Print</H2>
+        <div id="print-list">
+            <div class="print">
+                <ul id="image-list"></ul>
+            </div>
+          </div>
     </div>
+    <script src="prints.js"></script>
+
 </body>
 
 </html>
