@@ -1,5 +1,5 @@
 var Airtable = require('airtable');
-var baseImages = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appVDiUQURtQ4oD82');
+var baseImages = new Airtable({ apiKey: 'keygj5yTo81mZuc1Z' }).base('appVDiUQURtQ4oD82');
 
 var displayImages = function () {
   $('#image-list').empty();
