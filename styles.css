@@ -191,3 +191,23 @@ body {
         margin-bottom: 10px; /* Reduce margin for mobile view */
     }
 }
+
+/* Fix for the elongated image */
+.right img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px; /* Limit the height to avoid stretching on larger screens */
+}
+
+/* Adjusting the layout of the .left section to reduce excessive whitespace */
+.left {
+    align-items: flex-start; /* Align items to the start (top) */
+    padding: 20px 20px 0 20px; /* Reduce bottom padding */
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 768px) {
+    .left {
+        padding: 10px 10px 0 10px; /* Reduce padding for mobile view */
+    }
+}
