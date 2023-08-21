@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -8,38 +9,38 @@ body {
     padding: 20px;
     border-radius: 15px;
     display: flex;
-    flex-direction: column; /* Change back to column so footer goes below content-wrapper */
+    flex-direction: column;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 5% 10%;
+    margin: 5% auto;
+    max-width: 1200px;  /* Set a maximum width */
 }
-
 
 .content-wrapper {
     display: flex;
     flex-direction: row;
-    width: 100%; /* Ensure it takes full width */
+    width: 100%;
     justify-content: space-between;
 }
 
 .left, .right {
     background-color: #f9f9f9;
-    padding: 2vw; /* Adjusted to scale with viewport width */
+    padding: 2vw;
     border-radius: 15px;
     margin: 10px;
     flex: 1; 
-    width: calc(50% - 20px); /* Subtracting the margins */
-    position: relative; /* Added for the pseudo-element */
+    width: calc(50% - 20px);
+    position: relative;
 }
 
 .left::before, .right::before {
     content: "";
     display: block;
-    padding-top: 100%; /* This will maintain the aspect ratio */
+    padding-top: 100%;
 }
 
 .name {
-    font-size: 4vw; /* Adjusted to scale with viewport width */
+    font-size: 2rem;
     font-weight: bold;
     position: absolute;
     top: 10%;
@@ -47,62 +48,60 @@ body {
 }
 
 .position {
-    font-size: 2.7vw; /* Adjusted to scale with viewport width */
+    font-size: 1.5rem;
     position: absolute;
     top: 30%;
     left: 10%;
 }
+
 .quote {
-    font-size: 1.7vw; /* Adjusted to be smaller than the position */
-    color: #888; /* Lighter font color */
-    margin-top: 1vw; /* Space between position and quote */
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 1vw;
     position: absolute;
     top: 45%;
     left: 10%;
-    max-width: 80%; /* To ensure the quote doesn't overflow the container */
+    max-width: 80%;
 }
 
 .socials {
-    display: flex; /* Use flexbox for horizontal layout */
-    align-items: center; /* Align items vertically in the center */
+    display: flex;
+    align-items: center;
     position: absolute;
     bottom: 10%; 
     left: 10%;
 }
 
-
-
 .cv-button {
     display: inline-block;
-    background-color: #333; /* Button background color */
-    color: #fff; /* Button text color */
+    background-color: #333;
+    color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
-    font-size: 1vw;
+    font-size: 1.2rem;
     text-decoration: none;
-    margin-left: 2vw; /* Space between social links and button */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-    align-self: center; /* Ensure it aligns vertically in the center of the flex container */
+    margin-left: 2vw;
+    transition: background-color 0.3s;
+    align-self: center;
 }
 
 .icon {
     margin: 0 1vw;
-    font-size: 3vw; /* Adjusted to scale with viewport width */
+    font-size: 2rem;
     text-decoration: none;
     color: inherit;
 }
 
 .right img {
     border-radius: 50%;
-    width: 60%; /* Adjusted to scale with the container */
-    height: 60%; /* Adjusted to scale with the container */
+    width: 60%;
+    height: 60%;
     object-fit: cover;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the image */
+    transform: translate(-50%, -50%);
 }
-
 
 .footer {
     display: flex;
@@ -113,4 +112,24 @@ body {
 
 .phone, .email {
     font-size: 16px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .name, .position, .quote {
+        left: 5%;
+    }
+
+    .cv-button, .icon {
+        font-size: 1rem;
+    }
 }
