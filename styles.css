@@ -128,17 +128,6 @@ body {
         margin: 10px 0;
     }
 
-    .name, .position, .quote {
-        left: 5%;
-    }
-
-    .cv-button, .icon {
-        font-size: 1rem;
-    }
-}
-
-/* Adjusting font sizes and positions for mobile view */
-@media (max-width: 768px) {
     .name {
         font-size: 1.5rem;
         top: 5%;
@@ -156,20 +145,20 @@ body {
     }
 
     .socials {
-        bottom: 20%;
+        bottom: 15%;
     }
 
     .cv-button {
         font-size: 1rem;
+        padding: 10px 10px;
     }
 
     .icon {
         font-size: 1.5rem;
     }
-
-    /* Resizing and centering the image */
     .right img {
         width: 80%;
         height: 80%;
     }
 }
+
