@@ -146,11 +146,12 @@ body {
 
     .socials {
         bottom: 15%;
+        margin-bottom: 10px;
     }
 
     .cv-button {
         font-size: 1rem;
-        padding: 10px 10px;
+        margin-bottom: 10px;
     }
 
     .icon {
