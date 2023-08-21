@@ -170,3 +170,30 @@ body {
         height: 80%;
     }
 }
+
+/* Adjusting position of the socials (icons) to be below the "View CV" button */
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.socials {
+    position: static;
+    margin-top: 20px;
+}
+
+.cv-button {
+    margin-top: 20px;
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 768px) {
+    .cv-button {
+        margin-top: 10px;
+    }
+
+    .socials {
+        margin-top: 10px;
+    }
+}
