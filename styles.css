@@ -118,7 +118,6 @@ body {
 
 
 
-/* Adjusting font sizes and positions for mobile view */
 @media (max-width: 768px) {
     .content-wrapper {
         flex-direction: column;
@@ -129,6 +128,17 @@ body {
         margin: 10px 0;
     }
 
+    .name, .position, .quote {
+        left: 5%;
+    }
+
+    .cv-button, .icon {
+        font-size: 1rem;
+    }
+}
+
+/* Adjusting font sizes and positions for mobile view */
+@media (max-width: 768px) {
     .name {
         font-size: 1.5rem;
         top: 5%;
@@ -150,11 +160,11 @@ body {
     }
 
     .cv-button {
-        margin-top: 10px;
+        font-size: 1rem;
     }
 
-    .socials {
-        margin-top: 10px;
+    .icon {
+        font-size: 1.5rem;
     }
 
     /* Resizing and centering the image */
