@@ -133,3 +133,40 @@ body {
         font-size: 1rem;
     }
 }
+
+/* Adjusting font sizes and positions for mobile view */
+@media (max-width: 768px) {
+    .name {
+        font-size: 1.5rem;
+        top: 5%;
+    }
+
+    .position {
+        font-size: 1.2rem;
+        top: 20%;
+    }
+
+    .quote {
+        font-size: 1rem;
+        top: 35%;
+        left: 5%;
+    }
+
+    .socials {
+        bottom: 5%;
+    }
+
+    .cv-button {
+        font-size: 1rem;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+    }
+
+    /* Resizing and centering the image */
+    .right img {
+        width: 80%;
+        height: 80%;
+    }
+}
