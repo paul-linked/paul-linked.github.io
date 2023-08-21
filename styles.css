@@ -120,6 +120,15 @@ body {
 
 /* Adjusting font sizes and positions for mobile view */
 @media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+        margin: 10px 0;
+    }
+
     .name {
         font-size: 1.5rem;
         top: 5%;
@@ -141,11 +150,11 @@ body {
     }
 
     .cv-button {
-        font-size: 1rem;
+        margin-top: 10px;
     }
 
-    .icon {
-        font-size: 1.5rem;
+    .socials {
+        margin-top: 10px;
     }
 
     /* Resizing and centering the image */
